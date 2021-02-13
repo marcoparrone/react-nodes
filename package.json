@@ -1,6 +1,6 @@
 {
   "name": "@marcoparrone/react-nodes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React components implementing nodes of a tree structure where the nodes are either folders or final nodes.",
   "main": "src/react-nodes.js",
   "scripts": {

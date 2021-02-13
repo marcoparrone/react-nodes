@@ -19,7 +19,7 @@ class Node extends React.Component {
     let keyprefix = "Node-" + this.props.id;
     if (this.props.type !== 'folder') {
       content.push(React.createElement('label', { 'key': keyprefix },
-        [this.props.title, '&nbsp', React.createElement(IconButton, {
+        [this.props.title, ' ', React.createElement(IconButton, {
           'key': keyprefix + "-OpenButton", 'label': this.props.text['text_open'], 'icon': 'open_in_new',
           'callback': event => this.props.openNode(this.props.id)
         })]));
