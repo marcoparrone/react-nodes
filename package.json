@@ -1,0 +1,33 @@
+{
+  "name": "@marcoparrone/react-nodes",
+  "version": "1.0.0",
+  "description": "React components implementing nodes of a tree structure where the nodes are either folders or final nodes.",
+  "main": "src/react-nodes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcoparrone/react-nodes.git"
+  },
+  "keywords": [
+    "nodes",
+    "tree",
+    "structure",
+    "folder",
+    "document",
+    "react"
+  ],
+  "author": "Marco Parrone",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcoparrone/react-nodes/issues"
+  },
+  "homepage": "https://github.com/marcoparrone/react-nodes#readme",
+  "dependencies": {
+    "@marcoparrone/iconbutton": "^1.0.1",
+    "@marcoparrone/nodes": "^1.0.2",
+    "@material/card": "^10.0.0",
+    "react": "^17.0.1"
+  }
+}
