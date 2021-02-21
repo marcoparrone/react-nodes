@@ -12,6 +12,13 @@ import {
 } from '@marcoparrone/nodes';
 
 class Node extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      expanded: this.props.expanded ? true : false
+    };
+  }
+  
   render() {
     let content = [];
     let count = 0;
@@ -26,7 +33,7 @@ class Node extends React.Component {
     } else {
       content.push(React.createElement('label', {'key': keyprefix + '-Label'}, this.props.title));
       content.push(React.createElement('br', {'key': keyprefix + '-Br'}));
-      if (this.props.children !== undefined && this.props.children !== null && this.props.children !== []) {
+      if (this.props.children !== undefined && this.props.children !== null && this.props.children !== [] && this.state.expanded) {
         count = this.props.children.length;
         for (let i = 0; i < count; i++) {
           element = this.props.children[i];
@@ -65,6 +72,15 @@ class Node extends React.Component {
       content.push(React.createElement(IconButton, {'key': keyprefix + '-UpwardButton', 'label': this.props.text['text_move_upward'], 'icon': 'keyboard_arrow_up', 'callback': event => this.props.moveupwardNode(this.props.id)}));
       content.push(React.createElement(IconButton, {'key': keyprefix + '-DownwardButton', 'label': this.props.text['text_move_downward'], 'icon': 'keyboard_arrow_down', 'callback': event => this.props.movedownwardNode(this.props.id)}));
     }
+
+    if (this.props.type === 'folder' && this.props.children !== undefined && this.props.children !== null && this.props.children !== []) {
+      if (this.state.expanded) {
+        content.push(React.createElement(IconButton, {'key': keyprefix + '-UnexpandButton', 'label': this.props.text['expand_less'], 'icon': 'expand_less', 'callback': event => this.setState ({expanded: false})}));
+      } else {
+        content.push(React.createElement(IconButton, {'key': keyprefix + '-ExpandButton', 'label': this.props.text['expand_more'], 'icon': 'expand_more', 'callback': event => this.setState ({expanded: true})}));
+      }
+    }
+
     return React.createElement('div', {'className': 'mdc-card  mdc-card--outlined', 'key': keyprefix + 'Card'},
       React.createElement('div', {'className': 'card-body mdc-typography--body2'}, content));
   }
