@@ -43,10 +43,10 @@ class Node extends React.Component {
               'addNode': this.props.addNode,
               'openNode': this.props.openNode,
               'editNode': this.props.editNode,
-              'movebackwardNode': this.movebackwardNode,
-              'moveforwardNode': this.moveforwardNode,
-              'moveupwardNode': this.moveupwardNode,
-              'movedownwardNode': this.movedownwardNode,
+              'movebackwardNode': this.props.movebackwardNode,
+              'moveforwardNode': this.props.moveforwardNode,
+              'moveupwardNode': this.props.moveupwardNode,
+              'movedownwardNode': this.props.movedownwardNode,
               'text': this.props.text
             }));
           }
