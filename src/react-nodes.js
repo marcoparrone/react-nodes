@@ -67,10 +67,10 @@ class Node extends React.Component {
       content.push(React.createElement(IconButton, {'key': keyprefix + '-EditButton', 'label': this.props.text['text_edit'], 'icon': 'edit', 'callback': event => this.props.editNode(this.props.id)}));
     }
     if (this.props.showmove === 'yes') {
-      content.push(React.createElement(IconButton, {'key': keyprefix + '-BackwardButton', 'label': this.props.text['text_move_backward'], 'icon': 'keyboard_arrow_left', 'callback': event => this.props.movebackwardNode(this.props.id)}));
-      content.push(React.createElement(IconButton, {'key': keyprefix + '-ForwardButton', 'label': this.props.text['text_move_forward'], 'icon': 'keyboard_arrow_right', 'callback': event => this.props.moveforwardNode(this.props.id)}));
-      content.push(React.createElement(IconButton, {'key': keyprefix + '-UpwardButton', 'label': this.props.text['text_move_upward'], 'icon': 'keyboard_arrow_up', 'callback': event => this.props.moveupwardNode(this.props.id)}));
-      content.push(React.createElement(IconButton, {'key': keyprefix + '-DownwardButton', 'label': this.props.text['text_move_downward'], 'icon': 'keyboard_arrow_down', 'callback': event => this.props.movedownwardNode(this.props.id)}));
+      content.push(React.createElement(IconButton, {'key': keyprefix + '-BackwardButton', 'label': this.props.text['text_move_backward'], 'icon': 'arrow_back', 'callback': event => this.props.movebackwardNode(this.props.id)}));
+      content.push(React.createElement(IconButton, {'key': keyprefix + '-ForwardButton', 'label': this.props.text['text_move_forward'], 'icon': 'arrow_forward', 'callback': event => this.props.moveforwardNode(this.props.id)}));
+      content.push(React.createElement(IconButton, {'key': keyprefix + '-UpwardButton', 'label': this.props.text['text_move_upward'], 'icon': 'arrow_upward', 'callback': event => this.props.moveupwardNode(this.props.id)}));
+      content.push(React.createElement(IconButton, {'key': keyprefix + '-DownwardButton', 'label': this.props.text['text_move_downward'], 'icon': 'arrow_downward', 'callback': event => this.props.movedownwardNode(this.props.id)}));
     }
 
     if (this.props.type === 'folder' && this.props.children !== undefined && this.props.children !== null && this.props.children !== []) {
