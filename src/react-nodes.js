@@ -15,7 +15,7 @@ class Node extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      expanded: this.props.expanded ? true : false
+      expanded: this.props.expanded
     };
   }
   
@@ -156,7 +156,8 @@ export default class NodesArray extends React.Component {
           'moveforwardNode': this.moveforwardNode,
           'moveupwardNode': this.moveupwardNode,
           'movedownwardNode': this.movedownwardNode,
-          'text': this.props.text
+          'text': this.props.text,
+          'expanded': this.props.expanded
         }));
       }
     }
