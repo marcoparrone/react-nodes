@@ -84,9 +84,9 @@ class Node extends React.Component {
 
     if (this.props.type === 'folder' && this.props.children !== undefined && this.props.children !== null && this.props.children !== []) {
       if (this.state.expanded) {
-        content.push(React.createElement(IconButton, {'key': keyprefix + '-UnexpandButton', 'label': this.props.text['expand_less'], 'icon': 'expand_less', 'callback': event => this.setState ({expanded: false})}));
+        content.push(React.createElement(IconButton, {'key': keyprefix + '-UnexpandButton', 'label': this.props.text['text_expand_less'], 'icon': 'expand_less', 'callback': event => this.setState ({expanded: false})}));
       } else {
-        content.push(React.createElement(IconButton, {'key': keyprefix + '-ExpandButton', 'label': this.props.text['expand_more'], 'icon': 'expand_more', 'callback': event => this.setState ({expanded: true})}));
+        content.push(React.createElement(IconButton, {'key': keyprefix + '-ExpandButton', 'label': this.props.text['text_expand_more'], 'icon': 'expand_more', 'callback': event => this.setState ({expanded: true})}));
       }
     }
 
