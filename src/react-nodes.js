@@ -14,9 +14,17 @@ import {
 class Node extends React.Component {
   constructor(props) {
     super(props);
+    this.previous_expanded_default = this.props.expanded;
     this.state = {
-      expanded: this.props.expanded
+      expanded: this.previous_expanded_default
     };
+  }
+
+  componentDidUpdate() {
+    if (this.previous_expanded_default !== this.props.expanded) {
+      this.previous_expanded_default = this.props.expanded;
+      this.setState ({expanded: this.previous_expanded_default});
+    }
   }
   
   render() {
@@ -54,7 +62,8 @@ class Node extends React.Component {
               'moveforwardNode': this.props.moveforwardNode,
               'moveupwardNode': this.props.moveupwardNode,
               'movedownwardNode': this.props.movedownwardNode,
-              'text': this.props.text
+              'text': this.props.text,
+              'expanded': this.props.expanded
             }));
           }
         }
